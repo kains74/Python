@@ -13,8 +13,6 @@ x = [y.replace("\n", "").split(" — ") for y in number_en]
 number_en.close()
 eng = {z: int(y) for z, y in x}
 rus = {"Один": 1, "Два": 2, "Три": 3, "Четыре": 4}
-# temp_list = list(rus.items())
-# print(temp_list[0])
 number_rus = open("task_4_2.txt", "w")
 for a in eng:
     for b in rus:
