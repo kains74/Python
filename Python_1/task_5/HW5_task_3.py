@@ -9,7 +9,8 @@ __author__ = "Василенко Сергей Александрович"
 
 
 users = open("task_3.txt", "r", encoding='utf8')
-x = [y.replace("\n", "").split(" ") for y in users]
+x = [y.replace("\n", "").split(" ") for y in users.readlines()]
+print(x)
 tmp = {z: y for z, y in x if float(y) < 20000}
 tmp2 = {z: float(y) for z, y in x}
 tmp3 = sum(tmp2.values()) / len(tmp2.values())

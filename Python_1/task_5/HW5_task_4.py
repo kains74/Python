@@ -9,7 +9,7 @@ __author__ = "Василенко Сергей Александрович"
 # При этом английские числительные должны заменяться на русские. Новый блок строк должен записываться в новый текстовый файл.
 
 number_en = open("task_4.txt", "r", encoding='utf8')
-x = [y.replace("\n", "").split(" — ") for y in number_en]
+x = [y.replace("\n", "").split(" — ") for y in number_en.readlines()]
 number_en.close()
 eng = {z: int(y) for z, y in x}
 rus = {"Один": 1, "Два": 2, "Три": 3, "Четыре": 4}
