@@ -15,3 +15,4 @@ tmp2 = {z: float(y) for z, y in x}
 tmp3 = sum(tmp2.values()) / len(tmp2.values())
 print(f"Имеют доход меньше 20 000 {tmp}")
 print(f"Средняя величина дохода сотрудников составляет :{tmp3: .2f}")
+users.close()
