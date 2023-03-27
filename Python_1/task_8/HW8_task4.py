@@ -1,5 +1,6 @@
 __author__ = "Василенко Сергей Александрович"
 
+
 # 4. Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
 # А также класс «Оргтехника», который будет базовым для классов-наследников.
 # Эти классы — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определите параметры, общие для приведённых типов.
@@ -12,39 +13,43 @@ __author__ = "Василенко Сергей Александрович"
 # Например, для указания количества принтеров, отправленных на склад, нельзя использовать строковый тип данных.
 
 class Org_store:
+    stor_org = {}
+
+    def __init__(self, name , sn):
+        self.name = name
+        self.sn = sn
+        self.stor = {name: sn}
+
+    def new_org(self):
+        try:
+            #name = input("Введите название: ")
+            #sn = input("Введите серийный номер: ")
+            self.stor = {self.name : self.sn}
+            print(self.stor)
+            Org_store.stor_org[self.name] = [self.sn]
+            print(Org_store.stor_org)
+#            if self.name not in Org_store.stor_org.keys():
+#               Org_store.stor_org[self.name] = [self.sn]
+        except ValueError:
+            print("Недопустимое значение!")
 
 
-    def new(self, name, sn):
 
-        class Org():
-            brend = ["HP", "Canon", "kyocera"]
-            usb = True
-            tcp_ip = True
-            quantity = len(sn)
+class Print(Org_store):
+    pass
 
 
-            def __init__(self, name, sn,):
-                self.name = name
-                self.sn = sn
+class Scan(Org_store):
+    pass
 
-        class Print(Org):
-            sn = []
-            color = False
-        a = Print
-        a.quantity
 
-        class Scan(Org):
-            sn = []
-            format = "A3"
-        b = Scan
-        b.quantity
+class Xerox(Org_store):
+    pass
 
-        class Xerox(Org):
-            sn = []
-        c = Xerox
-        c.quantity
-
-        def new_org():
-
-x = Org_store()
+p = Print('Hp', "CP0001")
+s = Scan('Canon', "CS0001")
+x = Xerox('Xerox', "CX0001")
+p.new_org()
+s.new_org()
+x.new_org()
 
