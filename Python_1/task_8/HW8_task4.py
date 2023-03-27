@@ -13,6 +13,7 @@ __author__ = "Василенко Сергей Александрович"
 
 class Org_store:
 
+
     def new(self, name, sn):
 
         class Org():
