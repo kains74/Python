@@ -15,19 +15,17 @@ class Error():
         self.z = z
 
 
-Error("Вы ввели не число,введите пожалуйста число!")
+
 def ss():
     result = []
     while True:
-        x = input("Введите данные:")
-        if x == "stop":
-            return result
-
-        for y in x:
-            try:
-                y = int(y)
-            except Error as err:
-                return err
-            if y in range(0, 9):
-                result.append(y)
+        try:
+            x = input("Введите данные:")
+            if x == "stop":
+                return result
+            for y in x:
+                if int(y) in range(0, 9):
+                    result.append(y)
+        except ValueError:
+            print("Вы ввели не число,введите пожалуйста число!")
 print(ss())
