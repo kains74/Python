@@ -12,16 +12,38 @@ __author__ = "Василенко Сергей Александрович"
 # Например, для указания количества принтеров, отправленных на склад, нельзя использовать строковый тип данных.
 
 class Org_store:
-    class Org():
-        brend = ["HP", "Canon", "kyocera"]
-        usb = True
-        tcp_ip = True
-    class Print(Org):
-        sn = []
-        color = False
-    class Scan(Org):
-        sn = []
-        format = "A3"
 
-    class Xerox(Org):
-        sn = []
+    def new(self, name, sn):
+
+        class Org():
+            brend = ["HP", "Canon", "kyocera"]
+            usb = True
+            tcp_ip = True
+            quantity = len(sn)
+
+
+            def __init__(self, name, sn,):
+                self.name = name
+                self.sn = sn
+
+        class Print(Org):
+            sn = []
+            color = False
+        a = Print
+        a.quantity
+
+        class Scan(Org):
+            sn = []
+            format = "A3"
+        b = Scan
+        b.quantity
+
+        class Xerox(Org):
+            sn = []
+        c = Xerox
+        c.quantity
+
+        def new_org():
+
+x = Org_store()
+
